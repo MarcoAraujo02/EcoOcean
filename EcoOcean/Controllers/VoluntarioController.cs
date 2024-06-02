@@ -1,9 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EcoOcean.Data;
+using EcoOcean.DTOs;
+using EcoOcean.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EcoOcean.Controllers
 {
     public class VoluntarioController : Controller
     {
+
+        private readonly ILogger<VoluntarioController> _logger;
+
+
+
+        private readonly DataContext _dataContext;
+
+
+        public VoluntarioController(ILogger<VoluntarioController> logger, DataContext dataContext)
+        {
+            _dataContext = dataContext;
+            _logger = logger;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -13,5 +30,69 @@ namespace EcoOcean.Controllers
         {
             return View();
         }
+
+        public IActionResult Home()
+        {
+            return View();
+        }
+
+        public IActionResult LogarVoluntario(LoginVoluntarioDTO request)
+        {
+
+            var voluntario = _dataContext.Voluntario.FirstOrDefault(x => x.Email == request.Email);
+
+            if (voluntario == null)
+            {
+                return BadRequest("Email invalido");
+            }
+
+            if (voluntario.Senha != request.Senha)
+            {
+                return BadRequest("Senha Invalida");
+            }
+
+
+            HttpContext.Session.SetInt32("_Id", voluntario.Id);
+
+            return RedirectToAction("Home");
+        }
+
+
+        public IActionResult CadastrarVoluntario()
+        {
+            return View();
+        }
+        
+
+
+        public IActionResult CadastroVoluntario(CadastroVoluntrioDTO request)
+        {
+            var voluntario = _dataContext.Voluntario.FirstOrDefault(x => x.Email == request.Email);
+
+            if(voluntario != null)
+            {
+                return BadRequest("Voluntario ja existe");
+            }
+
+            Voluntario novovoluntario = new Voluntario
+            {
+                Nome = request.Nome,
+                DataNascimento = request.DataNascimento,
+                Email = request.Email,
+                Sexo = request.Sexo,
+                Senha = request.Senha,
+                UserName = request.UserName,
+            };
+
+            _dataContext.Add(novovoluntario);
+            _dataContext.SaveChanges();
+
+            return RedirectToAction("LoginPage");
+        }
+
+
+
+
+
     }
 }

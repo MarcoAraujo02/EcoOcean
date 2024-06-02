@@ -1,4 +1,4 @@
-﻿    @model List< EcoOcean.Models.Area>
+﻿    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +48,7 @@
     <link href="/static/css/botao.css" rel="stylesheet">
 
 </head>
-<a class="btn" asp-area="" asp-controller="Area" asp-action="Home">Voltar</a>
+<a class="btn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
 
 <body>
 
@@ -64,20 +64,35 @@
     <table class="tabela" bgcolor="black" width="500">
 
         <tr bgcolor="grey" align="center">
-            <th width="100">Nome do evento</th>
             <th width="100">Cep</th>
-            <th width="100">Inicar Evento</th>
+            <th width="100">Estado</th>
+            <th width="100">Cidade</th>
+            <th width="100">Rua</th>
+            <th width="100">Descricao</th>
+            <th width="100">Status</th>
+            <th width="100">Finalizar</th>
+
         </tr>
         <tbody>
-            
+            @foreach (var item in Model)
+            {
                 <tr bgcolor="lightgrey" align="center">
-                    <td></td>
-                    <td></td>
-            
+                    <td>@item.Area.Cep</td>
+                    <td>@item.Area.Estado</td>
+                    <td>@item.Area.Cidade</td>
+                    <td>@item.Area.Rua</td>
+                    <td>@item.Area.Descricao</td>
                     <td>
-                        <a asp-controller="Area" asp-action="EditarPage" asp-route-id="">Iniciar</a>
-   
+                        @if (item.DataInicio != null)
+                        {
+                            <text>@item.Evento.DataInicio</text>
+                        }
+                        else
+                        {
+                            <text>Sem evento associado</text>
+                        }
                     </td>
+                    <td>  <a asp-controller="Evento" asp-action="FinalizarEvento" asp-route-areaId="">Finalizar</a></td>
                 </tr>
             }
 

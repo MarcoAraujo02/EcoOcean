@@ -29,10 +29,29 @@ namespace EcoOcean.Controllers
             return View();
         }
 
-        public IActionResult ListaDeEventos()
+
+        public async Task<IActionResult> ListaDeEventos()
         {
+            // Recupere os dados das tabelas de área e eventos
+            var areas = await _dataContext.Area.ToListAsync();
+            var eventos = await _dataContext.Evento.ToListAsync();
+
+            // Combine os dados em uma única estrutura de dados
+            var listaCombinada = areas.Select(area => new
+            {
+                Area = area,
+                Evento = eventos.FirstOrDefault(e => e.AreaId == area.Id)
+            }).ToList();
+
+            return View(listaCombinada);
+        }
+
+        public IActionResult FinalizarEvento()
+        {
+  
             return View();
         }
+
         public IActionResult CadastrarEvento()
         {
 
@@ -56,7 +75,7 @@ namespace EcoOcean.Controllers
                 AreaId = areaid,
                 NomeEvento =  request.NomeEvento,
                 DataInicio = System.DateTime.Now,
-                DataFim = null,
+                DataFim = new DateTime(00, 00, 0000),
                 Status = "Andamento",
             };
 

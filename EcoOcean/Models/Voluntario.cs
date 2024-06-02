@@ -14,6 +14,13 @@ namespace EcoOcean.Models
         [Column("Nome")]
         public string Nome { get; set; }
 
+        [Required]
+        [Column("UserName")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Column("Senha")]
+        public string Senha { get; set; }
 
         [Required]
         [Column("Data_Nascimento")]
@@ -22,12 +29,15 @@ namespace EcoOcean.Models
 
         [Required]
         [Column("Email")]
-        public string Email { get; set;}
+        public string Email { get; set;} 
 
 
         [Required]
         [Column("Sexo")]
         public string Sexo { get; set;}
+
+
+  
 
         public ICollection<Evento> Eventos { get; set; }
     }

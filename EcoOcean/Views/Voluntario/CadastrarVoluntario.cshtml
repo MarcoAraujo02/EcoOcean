@@ -40,19 +40,31 @@
 <body>
 
 
-    <form asp-controller="Voluntario" asp-action="CadastrarVoluntario" method="post">
+    <form asp-controller="Voluntario" asp-action="CadastroVoluntario" method="post">
         <h1 class="titulo2">Cadastro de Voluntario</h1>
         <br /><br />
 
         <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Nome</label>
+            <input name="Nome" type="text" class="form-control" id="exampleInputPassword1" required>
+
+        </div>
+
+        <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">UserName</label>
-            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required>
+            <input name="UserName" type="text" class="form-control" id="exampleInputPassword1" required>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Data de Nascimento</label>
+            <input name="DataNascimento" type="date" class="form-control" id="exampleInputPassword1" required>
 
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">Sexo</label>
-            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required>
+            <input name="Sexo" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
 
@@ -63,15 +75,14 @@
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Password</label>
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required>
+            <label for="exampleInputPassword1" class="titulo">Senha</label>
+            <input name="Senha" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
 
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
-        <a class="criar" asp-area="" asp-controller="Administrador" asp-action="Cadastro Page">Criar Conta</a>
         <br />
         <br />
 

@@ -33,7 +33,7 @@ namespace EcoOcean.Models
   
         [Required]
         [Column("Data_fim")]
-        public DateTime? DataFim { get; set; } = null;
+        public DateTime? DataFim { get; set; } 
 
         [Required]
         [Column("Status")]

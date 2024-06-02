@@ -41,7 +41,7 @@
 
 
     <form asp-controller="Voluntario" asp-action="LogarVoluntario" method="post">
-        <h1 class="titulo2">Login De Administrador</h1>
+        <h1 class="titulo2">Login De Voluntario</h1>
         <br /><br />
 
         <div class="mb-3">
@@ -51,15 +51,15 @@
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Password</label>
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required>
+            <label for="exampleInputPassword1" class="titulo">Senha</label>
+            <input name="Senha" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
 
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
-        <a class="criar" asp-area="" asp-controller="Voluntario" asp-action="CriarVoluntario">Criar Conta</a>
+        <a class="criar" asp-area="" asp-controller="Voluntario" asp-action="CadastrarVoluntario">Criar Conta</a>
         <br />
         <br />
 
