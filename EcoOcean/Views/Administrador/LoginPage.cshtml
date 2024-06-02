@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EcoOcean</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <style>
+        .formulario {
+            margin-top: 10%;
+            margin-left: 25%;
+            width: 50%
+        }
+
+        .titulo {
+            margin-left: 48%
+        }
+
+        .titulo2 {
+            margin-left: 35%
+        }
+
+        .btn {
+            margin-left: 48%
+        }
+
+        .criar {
+            margin-left: 45%
+        }
+
+        .aa {
+            margin-left: 5%;
+            font-size: 50px;
+            margin-top: 155%
+        }
+    </style>
+</head>
+<body>
+
+
+    <form asp-controller="Administrador" asp-action="LogarAdministrador" method="post">
+        <h1 class="titulo2">Login De Administrador</h1>
+        <br /><br />
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Email</label>
+            <input name="Email"type="text" class="form-control" id="exampleInputPassword1" required>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Password</label>
+            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required>
+
+        </div>
+       
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br />
+        <a class="criar" asp-area="" asp-controller="Administrador" asp-action="Cadastro Page">Criar Conta</a>
+        <br />
+        <br />
+
+    </form>
+</body>
+</html>

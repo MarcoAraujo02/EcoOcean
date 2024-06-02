@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EcoOcean</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <style>
+        .formulario {
+            margin-top: 10%;
+            margin-left: 25%;
+            width: 50%
+        }
+
+        .titulo {
+            margin-left: 48%
+        }
+
+        .titulo2 {
+            margin-left: 33%
+        }
+
+        .btn {
+            margin-left: 48%
+        }
+
+        .criar {
+            margin-left: 45%
+        }
+
+        .aa {
+            margin-left: 5%;
+            font-size: 50px;
+            margin-top: 155%
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <form asp-controller="Eventos" asp-action="CadastroEvento" method="post">
+
+        <label>ID DO ADM</label>
+        <input name="IdAdministrador" value="@ViewBag.IdAdministrador">
+
+        <h1 class="titulo2">Casdastro de Eventos</h1>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="titulo">Nome do Evento</label>
+            <input n name="Nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Nome Do Evento">
+
+        </div>
+
+
+        <select>
+            <option value="">Selecione um CEP</option>
+            @foreach (var cep in ViewBag.CEPs)
+            {
+                <option value="@cep">@cep</option>
+            }
+        </select>
+        <br />
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <br />
+        <br />
+
+    </form>
+</body>
+</html>

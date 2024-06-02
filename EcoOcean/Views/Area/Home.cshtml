@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en"
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Inscreening</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <style>
+.btn-link {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 47%;
+    border-radius: 3px;
+    width: 160px;
+    text-align: center;
+    padding: 8px;
+    font-family: Verdana,Geneva, Tahoma, sans-serif;
+    font-size: 16;
+    background-color: #003c8f;
+    color: #fff;
+    box-shadow: 2px 2px 2px #000;
+}
+
+.titulo {
+    margin-left: 46%;
+    margin-top: 10%;
+}
+</style>
+</head>
+<body>
+    <h2 class="titulo">EcoOcean</h2>
+
+    <a class="btn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
+    <br />
+    <br />
+    <br />
+
+            <a class="btn-link" asp-area="" asp-controller="Area" asp-action="CadastrarArea">Nova Area</a>
+            <br /><br />
+            <br />
+            <a class="btn-link" asp-area="" asp-controller="Area" asp-action="ListaDeArea">Lista De Area</a>
+</body>
+</html>

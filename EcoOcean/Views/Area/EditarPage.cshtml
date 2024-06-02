@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EcoOcean</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <style>
+        .formulario {
+            margin-top: 10%;
+            margin-left: 25%;
+            width: 50%
+        }
+
+        .titulo {
+            margin-left: 48%
+        }
+
+        .titulo2 {
+            margin-left: 33%
+        }
+
+        .btn {
+            margin-left: 48%
+        }
+
+        .criar {
+            margin-left: 45%
+        }
+
+        .aa {
+            margin-left: 5%;
+            font-size: 50px;
+            margin-top: 155%
+        }
+    </style>
+</head>
+<body>
+
+    @model EcoOcean.Models.Area
+
+    <form asp-controller="Area" asp-action="EditarArea" method="post">
+
+        <h1 class="titulo2">Casdastro de Area</h1>
+
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Cep</label>
+            <input name="Cep" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Cep" asp-for="Cep">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Estado</label>
+            <input name="Estado" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Estado" asp-for="Estado">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Cidade</label>
+            <input name="Cidade" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Cidade" asp-for="Cidade">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Rua</label>
+            <input name="Rua" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Rua" asp-for="Rua">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="titulo">Descricao</label>
+            <input name="Descricao" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Descricao" asp-for="Descricao">
+
+        </div>
+        
+        <label>ESSE AQUI ERA PRA TA O ID DO ADM</label>
+        <input  name="Id" value="@Model.Id">
+
+
+        <button type="submit" class="btn btn-primary">Editar</button>
+        <br />
+        <br />
+
+    </form>
+</body>
+</html>
