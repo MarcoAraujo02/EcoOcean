@@ -49,16 +49,16 @@
         <h1 class="titulo2">Casdastro de Eventos</h1>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="titulo">Nome do Evento</label>
-            <input n name="Nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Nome Do Evento">
+            <input  name="NomeEvento" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Nome Do Evento">
 
         </div>
 
 
-        <select>
+        <select name="AreaId">
             <option value="">Selecione um CEP</option>
-            @foreach (var cep in ViewBag.CEPs)
+            @foreach (var area in ViewBag.Areas)
             {
-                <option value="@cep">@cep</option>
+                <option value="@area.Id">@area.Cep</option>
             }
         </select>
         <br />

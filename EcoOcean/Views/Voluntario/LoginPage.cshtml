@@ -40,13 +40,13 @@
 <body>
 
 
-    <form asp-controller="Administrador" asp-action="LogarAdministrador" method="post">
+    <form asp-controller="Voluntario" asp-action="LogarVoluntario" method="post">
         <h1 class="titulo2">Login De Administrador</h1>
         <br /><br />
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="titulo">Email</label>
-            <input name="Email"type="text" class="form-control" id="exampleInputPassword1" required>
+            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
 
@@ -55,10 +55,11 @@
             <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
-       
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
+        <a class="criar" asp-area="" asp-controller="Voluntario" asp-action="CriarVoluntario">Criar Conta</a>
         <br />
         <br />
 

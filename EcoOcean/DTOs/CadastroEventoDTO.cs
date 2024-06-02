@@ -6,6 +6,8 @@ namespace EcoOcean.DTOs
     public class CadastroEventoDTO
     {
 
+        public string NomeEvento { get; set; }
+
         [Required]
         public DateTime DataInicio { get; set; } = System.DateTime.Now;
 

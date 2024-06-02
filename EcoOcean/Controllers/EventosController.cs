@@ -33,25 +33,38 @@ namespace EcoOcean.Controllers
         {
             return View();
         }
-
         public IActionResult CadastrarEvento()
         {
 
-            var ceps = _dataContext.Area.Select(a => a.Cep).ToList();
-            ViewBag.CEPs = ceps;
+            var areas = _dataContext.Area.ToList();
+            ViewBag.Areas = areas;
+
 
             var id = HttpContext.Session.GetInt32("_Id");
-            var idAdminitrador = _dataContext.Administrador.Find(id);
-            ViewBag.IdAdministrador = idAdminitrador.Id;
+            var idAdministrador = _dataContext.Administrador.Find(id);
+            ViewBag.IdAdministrador = idAdministrador.Id;
 
             return View();
         }
 
-        public IActionResult CadastroEvento(CadastroEventoDTO request)
+        public IActionResult CadastroEvento(CadastroEventoDTO request, int idAdministrador, int areaid)
         {
 
-   
-            return View();
+            Evento evento = new Evento
+            {
+                AdministradorId = idAdministrador,
+                AreaId = areaid,
+                NomeEvento =  request.NomeEvento,
+                DataInicio = System.DateTime.Now,
+                DataFim = null,
+                Status = "Andamento",
+            };
+
+
+            _dataContext.Add(evento);
+            _dataContext.SaveChanges();
+             
+            return View("~/Views/Area/Home.cshtml");
         }
     }
 }
