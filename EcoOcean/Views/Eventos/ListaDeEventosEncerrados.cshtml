@@ -1,4 +1,4 @@
-﻿    
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,13 +70,12 @@
             <th width="100">Rua</th>
             <th width="100">Complemento</th>
             <th width="100">Data de Inicio</th>
-            <th width="100">Finalizar</th>
 
         </tr>
         <tbody>
             @foreach (var item in Model)
             {
-                if (item.Evento.Status == "Andamento")
+                if (item.Evento.Status == "Encerrado")
                 {
                     <tr bgcolor="lightgrey" align="center">
                         <td>@item.Area.Cep</td>
@@ -94,11 +93,10 @@
                                 <text>Sem evento associado a esse CEP, associe um</text>
                             }
                         </td>
-                        <td><a asp-controller="Eventos" asp-action="FinalizarEvento" asp-route-eventoId="@item.Evento.Id">Finalizar</a></td>
                     </tr>
                 }
-                }
-           
+            }
+
 
 
         </tbody>

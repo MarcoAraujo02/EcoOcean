@@ -24,6 +24,8 @@ namespace EcoOcean.Controllers
             _dataContext = dataContext;
             _logger = logger;
         }
+
+
         public IActionResult Index()
         {
             return View();
@@ -46,11 +48,36 @@ namespace EcoOcean.Controllers
             return View(listaCombinada);
         }
 
-        public IActionResult FinalizarEvento()
+        public async Task<IActionResult> ListaDeEventosEncerrados()
         {
-  
-            return View();
+            // Recupere os dados das tabelas de área e eventos
+            var areas = await _dataContext.Area.ToListAsync();
+            var eventos = await _dataContext.Evento.ToListAsync();
+
+            // Combine os dados em uma única estrutura de dados
+            var listaCombinada = areas.Select(area => new
+            {
+                Area = area,
+                Evento = eventos.FirstOrDefault(e => e.AreaId == area.Id)
+            }).ToList();
+
+            return View(listaCombinada);
         }
+
+
+        public IActionResult FinalizarEvento(int eventoId)
+        {
+            var evento = _dataContext.Evento.FirstOrDefault(e => e.Id == eventoId);
+
+            if (evento != null)
+            {
+                evento.Status = "Encerrado";
+                _dataContext.SaveChanges();
+            }
+
+            return View("~/Views/Administrador/Home.cshtml"); 
+        }
+
 
         public IActionResult CadastrarEvento()
         {
@@ -66,6 +93,7 @@ namespace EcoOcean.Controllers
             return View();
         }
 
+
         public IActionResult CadastroEvento(CadastroEventoDTO request, int idAdministrador, int areaid)
         {
 
@@ -75,7 +103,7 @@ namespace EcoOcean.Controllers
                 AreaId = areaid,
                 NomeEvento =  request.NomeEvento,
                 DataInicio = System.DateTime.Now,
-                DataFim = new DateTime(00, 00, 0000),
+                DataFim = DateTime.MinValue,
                 Status = "Andamento",
             };
 

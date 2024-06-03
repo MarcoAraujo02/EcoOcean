@@ -41,6 +41,7 @@ namespace EcoOcean.Controllers
     
         public IActionResult LogarAdministrador(LoginAdmDTO request)
         {
+
             var find = _dataContext.Administrador.FirstOrDefault(x => x.Email == request.Email);
 
             if (find == null)
