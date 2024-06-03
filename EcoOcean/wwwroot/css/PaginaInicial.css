@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+
+body {
+    background-color: #030925;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.titulo {
+    color: #EBF5FF;
+    font-family: "Quando", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    text-align: center;
+}
+
+.agrupamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border: 2px solid #4D77FF;
+    border-radius: 8px;
+    padding: 10px 25px;
+    background: transparent;
+    width: 55%; /* Make the buttons smaller */
+    margin-bottom: 20px; /* Add bottom margin to space out the items */
+    color: #EBF5FF; /* Make the text inside the buttons white */
+    text-decoration: none; /* Remove underline from the text */
+}
+
+.button-text {
+    font-size: 24px; /* Increase the font size */
+    margin-left: 20px; /* Add more space between the text and the icon */
+    text-decoration:none;
+    color:white;
+}
+

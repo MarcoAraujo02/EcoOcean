@@ -9,13 +9,27 @@ namespace EcoOcean.Models
         [Key]
         public int Id { get; set; }
 
+
+        [Required]
+        public int PartipiacaoId { get; set; }
+
+
+        [ForeignKey("ParticipacaoId")]
+        public Participacao? Participacao { get; set;}
+
+
         [Required]
         [Column("Tipo_Do_Lixo")]
         public string TipoDoLixo { get; set; }
 
+
         [Required]
         [Column("Quantidade")]
         public float Quantidade { get; set; }
+
+
+
+
 
     }
 }

@@ -7,61 +7,41 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
-    <style>
-        .formulario {
-            margin-top: 10%;
-            margin-left: 25%;
-            width: 50%
-        }
-
-        .titulo {
-            margin-left: 48%
-        }
-
-        .titulo2 {
-            margin-left: 35%
-        }
-
-        .btn {
-            margin-left: 48%
-        }
-
-        .criar {
-            margin-left: 45%
-        }
-
-        .aa {
-            margin-left: 5%;
-            font-size: 50px;
-            margin-top: 155%
-        }
-    </style>
+    <link href="~/css/Login.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 
     <form asp-controller="Voluntario" asp-action="LogarVoluntario" method="post">
-        <h1 class="titulo2">Login De Voluntario</h1>
-        <br /><br />
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Email</label>
-            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required>
+        <div class="agrupamento">
+            <h1 class="titulo">Entra na <br /> EcoOcean</h1>
+        </div>
+       
+        <br />
+        <br />
+
+
+        <div class="agrupamento-input">
+           
+            <input class="inputs" name="Email" type="text" class="form-control" id="exampleInputPassword1" required>
+
+            <br />
+            <input class="inputs" name="Senha" type="text" class="form-control" id="exampleInputPassword1" required>
 
         </div>
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Senha</label>
-            <input name="Senha" type="text" class="form-control" id="exampleInputPassword1" required>
+        <br />
+        <br />
 
+        <div class="agrupamento-links">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br />
+            <a class="criar" asp-area="" asp-controller="Voluntario" asp-action="CadastrarVoluntario">Criar Conta</a>
+            <br />
+            <br />
         </div>
-
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <br />
-        <a class="criar" asp-area="" asp-controller="Voluntario" asp-action="CadastrarVoluntario">Criar Conta</a>
-        <br />
-        <br />
+       
 
     </form>
 </body>

@@ -7,48 +7,40 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
-    <style>
-        .btn-link {
-            display: inline-block;
-            text-decoration: none;
-            margin-left: 47%;
-            border-radius: 3px;
-            width: 160px;
-            text-align: center;
-            padding: 8px;
-            font-family: Verdana,Geneva, Tahoma, sans-serif;
-            font-size: 16;
-            background-color: #003c8f;
-            color: #fff;
-            box-shadow: 2px 2px 2px #000;
-        }
-
-        .titulo {
-            margin-left: 46%;
-            margin-top: 10%;
-        }
-    </style>
+     <link href="~/css/PaginaInicial.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h2 class="titulo">EcoOcean</h2>
+    <div class="logo">
+        <img src="~/css/imgs/Logo.png" alt="Logo">
+    </div>
+    <h1 class="titulo">EcoOcean</h1>
 
-
-    <br />
-    <br />
-    <br />
-            
-            <a class="btn-link" asp-area="" asp-controller="Eventos" asp-action="ListaDeEventos" >Eventos</a>
-            <br /><br />
-            <br />
-            <a class="btn-link" asp-area="" asp-controller="Eventos" asp-action="ListaDeEventosEncerrados">Historico de Eventos</a>
-            <br /><br />
-            <br />
-            <a class="btn-link" asp-area="" asp-controller="Eventos" asp-action="CadastrarEvento">Novo Evento</a>
-            <br /><br />
-            <br />
-            <a class="btn-link" asp-area="" asp-controller="Area" asp-action="Home">Nova Area</a>
-            <br /><br />
-            <br />
-            <a class="btn-link" asp-area="" asp-controller="Coleta" asp-action="Coleta">Coleta</a>
+    <div class="agrupamento">
+        <button class="item">
+            <img src="~/css/imgs/Vector.png" alt="Eventos">
+            <a class="button-text" asp-area="" asp-controller="Eventos" asp-action="ListaDeEventos">Eventos</a>
+        </button>
+        <button class="item">
+            <img src="~/css/imgs/Search Database.png" alt="Histórico">
+            <a class="button-text"   asp-area="" asp-controller="Eventos" asp-action="ListaDeEventosEncerrados">Historico de Eventos</a>
+        </button>
+        <button class="item">
+            <img src="~/css/imgs/Calendar Plus.png" alt="Novo Alerta">
+           <a class="button-text" asp-area="" asp-controller="Eventos" asp-action="CadastrarEvento">Novo Evento</a>
+        </button>
+        <button class="item">
+            <img src="~/css/imgs/Calendar Plus.png" alt="Novo Alerta">
+            <a class="button-text" asp-area="" asp-controller="Area" asp-action="Home">Nova Area</a>
+        </button>
+        <button class="item">
+            <img src="~/css/imgs/Recycle.png" alt="Coleta">
+            <a class="button-text" asp-area="" asp-controller="Coleta" asp-action="Coleta">Coleta</a>
+        </button>
+            <a class="btn" asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+    </div>
 </body>
 </html>
+
+
+
+

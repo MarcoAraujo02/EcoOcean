@@ -2,6 +2,7 @@
 using EcoOcean.DTOs;
 using EcoOcean.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcoOcean.Controllers
 {
@@ -9,7 +10,6 @@ namespace EcoOcean.Controllers
     {
 
         private readonly ILogger<VoluntarioController> _logger;
-
 
 
         private readonly DataContext _dataContext;
@@ -26,10 +26,29 @@ namespace EcoOcean.Controllers
             return View();
         }
 
+
+        public async Task<IActionResult> HomeComEventos()
+        {
+            // Recupere os dados das tabelas de área e eventos
+            var areas = await _dataContext.Area.ToListAsync();
+            var eventos = await _dataContext.Evento.ToListAsync();
+
+            // Combine os dados em uma única estrutura de dados
+            var listaCombinada = areas.Select(area => new
+            {
+                Area = area,
+                Evento = eventos.FirstOrDefault(e => e.AreaId == area.Id)
+            }).ToList();
+
+            return View(listaCombinada);
+        }
+
+
         public IActionResult LoginPage()
         {
             return View();
         }
+
 
         public IActionResult Home()
         {
@@ -54,7 +73,7 @@ namespace EcoOcean.Controllers
 
             HttpContext.Session.SetInt32("_Id", voluntario.Id);
 
-            return RedirectToAction("Home");
+            return RedirectToAction("HomeComEventos");
         }
 
 

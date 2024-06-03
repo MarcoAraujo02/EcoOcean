@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+
+body {
+    background-color: #030925;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.titulo {
+    color: #EBF5FF;
+    font-family: "Quando", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: #EBF5FF;
+    font-family: "Quando", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px; /* Add some top margin */
+    margin-bottom: 40px; /* Add some bottom margin to create space */
+}
+
+.agrupamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.agrupamento-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agrupamento-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add top margin to space out the button */
+}
+
+.link-login {
+    background-color: #233DE1;
+    padding: 13px;
+    text-decoration: none;
+    color: #EBF5FF;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+}
+
+
+
+.inputs {
+    border: 2px solid #4D77FF;
+    border-radius: 8px;
+    padding: 10px 25px;
+    background: transparent;
+    width: 65%;
+    margin-bottom: 20px; /* Add bottom margin to space out the inputs */
+    color: #EBF5FF; /* Make the text inside the inputs white */
+    text-align: center; /* Center the text inside the inputs */
+}
+
+.item {
+    margin-bottom: 20px; /* Add bottom margin to space out the items */
+}

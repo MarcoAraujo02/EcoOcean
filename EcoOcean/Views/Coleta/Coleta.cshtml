@@ -7,83 +7,46 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
-    <style>
-        .formulario {
-            margin-top: 10%;
-            margin-left: 25%;
-            width: 50%
-        }
-
-        .titulo {
-            margin-left: 48%
-        }
-
-        .titulo2 {
-            margin-left: 35%
-        }
-
-        .btn {
-            margin-left: 48%
-        }
-
-        .criar {
-            margin-left: 45%
-        }
-
-        .aa {
-            margin-left: 5%;
-            font-size: 50px;
-            margin-top: 155%
-        }
-    </style>
+    <link href="~/css/Coleta.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-
-
     <form asp-controller="Coleta" asp-action="EfetuarColeta" method="post">
-        <h1 class="titulo2">Coleta</h1>
-        <br /><br />
+    <div class="logo">
+        <img src="~/css/imgs/Logo.png" alt="Logo">
+    </div>
+    <h1 class="titulo">Coleta</h1>
+    <div class="agrupamento-input">
 
-        <div class="mb-3">
-            <input name="Email" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Id do Voluntario">
-        </div>
+        <input class="inputs" type="text" id="volunteerId" name="volunteerId" placeholder="ID do Voluntário">
+        <input class="inputs" type="text" id="weight" name="weight" placeholder="ID Evento">
 
-        <div class="mb-3">
-          
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Id do evento">
+        <p class="subtitulo">Informe a pesagem da coleta em kg:</p>
 
-        </div>
-
-        <h3>Informe o ID da pesagem em kilos</h3>
-        <div class="mb-3">
- 
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Papel">
-
-        </div>
-
-        <div class="mb-3">
-       
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Metal">
-
-        </div>
-
-        <div class="mb-3">
+        <select >
+                <option value="">Selecione o tipo do material</option>
+                <option>Papel</option>
+                <option>Metal</option>
+                <option>Celular</option>
+                <option>Areeia</option>
            
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Vidro">
-
-        </div>
-
-        <div class="mb-3">
-        
-            <input name="Password" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Organico">
-
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        </select>
         <br />
-        <br />
-        <br />
+         <input class="inputs" type="text" id="weight" name="weight" placeholder="Selecione em KG a quantidade">
+    </div>
 
+    <br /><br />
+
+    <div class="agrupamento-links">
+        <button href="#" class="link-login">Registrar</button>
+            
+    </div>
+    <br />
+        <a class="link-login-2" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
     </form>
 </body>
+
 </html>
+
+
+
