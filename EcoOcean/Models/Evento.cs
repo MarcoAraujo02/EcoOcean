@@ -40,7 +40,7 @@ namespace EcoOcean.Models
         public string Status { get; set; } = "Andamento";
 
 
-        public ICollection<Voluntario> Voluntarios { get; set; }
+        public ICollection<Participacao> Participacao { get; set; }
 
 
 

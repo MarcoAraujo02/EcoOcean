@@ -29,11 +29,18 @@ namespace EcoOcean.Controllers
 
         public async Task<IActionResult> HomeComEventos()
         {
-            // Recupere os dados das tabelas de área e eventos
+
+
+            var id = HttpContext.Session.GetInt32("_Id");
+            var IdVoluntario = _dataContext.Voluntario.Find(id);
+            ViewBag.IdVoluntario = IdVoluntario.Id;
+
+            
             var areas = await _dataContext.Area.ToListAsync();
             var eventos = await _dataContext.Evento.ToListAsync();
 
-            // Combine os dados em uma única estrutura de dados
+
+
             var listaCombinada = areas.Select(area => new
             {
                 Area = area,
@@ -75,7 +82,6 @@ namespace EcoOcean.Controllers
 
             return RedirectToAction("HomeComEventos");
         }
-
 
         public IActionResult CadastrarVoluntario()
         {
