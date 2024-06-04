@@ -74,9 +74,8 @@
             <input name="Descricao" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Descricao" asp-for="Descricao">
 
         </div>
-        
-        <label>ESSE AQUI ERA PRA TA O ID DO ADM</label>
-        <input  name="Id" value="@Model.Id">
+   
+        <input  type="hidden" name="Id" value="@Model.Id">
 
 
         <button type="submit" class="btn btn-primary">Editar</button>

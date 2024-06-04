@@ -7,65 +7,74 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <link href="~/css/Cadastro.css" rel="stylesheet" type="text/css" />
+    
     <style>
-        .formulario {
-            margin-top: 10%;
-            margin-left: 25%;
-            width: 50%
+        .box{
+            margin-left:37%;
+            padding:7px;
         }
 
-        .titulo {
-            margin-left: 48%
+
+        .btnn {
+            background-color: #030925;
+            padding: 10px 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px dashed #02ac92;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            transition: .4s;
+            text-decoration:none;
         }
 
-        .titulo2 {
-            margin-left: 33%
-        }
-
-        .btn {
-            margin-left: 48%
-        }
-
-        .criar {
-            margin-left: 45%
-        }
-
-        .aa {
-            margin-left: 5%;
-            font-size: 50px;
-            margin-top: 155%
-        }
     </style>
 </head>
+<div class="logo">
+    <img src="~/css/imgs/Logo.png" alt="Logo">____
+    <a class="btnn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
+</div>
 <body>
+   
 
 
 
     <form asp-controller="Eventos" asp-action="CadastroEvento" method="post">
 
-        <label>ID DO ADM</label>
-        <input name="IdAdministrador" value="@ViewBag.IdAdministrador">
 
-        <h1 class="titulo2">Casdastro de Eventos</h1>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="titulo">Nome do Evento</label>
-            <input  name="NomeEvento" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Nome Do Evento">
+        <input type="hidden" name="IdAdministrador" value="@ViewBag.IdAdministrador">
+
+        <div class="agrupamento">
+            <h1 class="titulo">Cadatro de Evento</h1>
+        </div>
+
+        <br />
+        <div class="agrupamento-input">
+            <br />
+
+            <input name="NomeEvento" type="text" class="inputs" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Nome Do Evento">
 
         </div>
 
-
-        <select name="AreaId">
-            <option value="">Selecione um CEP</option>
+        <br /><br />
+        
+        <select name="AreaId" class="box">
+            <option value="">Selecione um CEP para vincular seu evento</option>
             @foreach (var area in ViewBag.Areas)
             {
                 <option value="@area.Id">@area.Cep</option>
             }
         </select>
         <br />
-
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
         <br />
-        <br />
+  
+        <div class="agrupamento-links">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <br />
+            <br />
+        </div>
 
     </form>
 </body>

@@ -7,39 +7,40 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
-    <style>
-.btn-link {
-    display: inline-block;
-    text-decoration: none;
-    margin-left: 47%;
-    border-radius: 3px;
-    width: 160px;
-    text-align: center;
-    padding: 8px;
-    font-family: Verdana,Geneva, Tahoma, sans-serif;
-    font-size: 16;
-    background-color: #003c8f;
-    color: #fff;
-    box-shadow: 2px 2px 2px #000;
-}
+    <link href="~/css/PaginaInicial.css" rel="stylesheet" type="text/css" />
+     <link href="~/css/Tabela.css" rel="stylesheet" type="text/css" />
 
-.titulo {
-    margin-left: 46%;
-    margin-top: 10%;
-}
-</style>
 </head>
 <body>
-    <h2 class="titulo">EcoOcean</h2>
+    <div class="logo">
+        <img src="~/css/imgs/Logo.png" alt="Logo">____
+        <a class="btn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1 class="titulo">Area</h1>
 
-    <a class="btn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
-    <br />
-    <br />
-    <br />
+    <div class="agrupamento">
+        <button class="item">
+            <img src="~/css/imgs/Calendar Plus.png" alt="Eventos">
+            <a class="button-text" asp-area="" asp-controller="Area" asp-action="CadastrarArea">Nova Area</a>
+        </button>
+        <br />
+        <button class="item">
+            <img src="~/css/imgs/Search Database.png" alt="Histórico">
+            <a class="button-text"  asp-area="" asp-controller="Area" asp-action="ListaDeArea">Lista De Area</a>
 
-            <a class="btn-link" asp-area="" asp-controller="Area" asp-action="CadastrarArea">Nova Area</a>
-            <br /><br />
-            <br />
-            <a class="btn-link" asp-area="" asp-controller="Area" asp-action="ListaDeArea">Lista De Area</a>
+        </button>
+    </div>
+
+   
+
 </body>
 </html>
+
+
+
+

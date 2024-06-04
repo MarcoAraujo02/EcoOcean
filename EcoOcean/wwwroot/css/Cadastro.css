@@ -43,12 +43,13 @@ body {
 }
 
 .link-login {
+    margin-left: 40px;
     background-color: #233DE1;
     padding: 13px;
     text-decoration: none;
     color: #EBF5FF;
     border-radius: 8px;
-    width: 150px;
+    width: 1520px;
     text-align: center;
 }
 
@@ -58,5 +59,7 @@ body {
     padding: 10px 25px;
     background: transparent;
     width: 65%;
-    margin-bottom: 20px; /* Add bottom margin to space out the inputs */
+    display: block;
+    color: white;
 }
+

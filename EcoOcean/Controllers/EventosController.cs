@@ -112,7 +112,7 @@ namespace EcoOcean.Controllers
             _dataContext.Add(evento);
             _dataContext.SaveChanges();
              
-            return View("~/Views/Area/Home.cshtml");
+            return View("~/Views/Administrador/Home.cshtml");
         }
     }
 }

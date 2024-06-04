@@ -6,36 +6,33 @@
     <title>@ViewData["Title"] - EcoOcean</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <style>
-        .btn-link {
-            display: inline-block;
-            text-decoration: none;
-            margin-left: 47%;
-            border-radius: 3px;
-            width: 160px;
-            text-align: center;
-            padding: 8px;
-            font-family: Verdana,Geneva, Tahoma, sans-serif;
-            font-size: 16;
-            background-color: #003c8f;
-            color: #fff;
-            box-shadow: 2px 2px 2px #000;
-        }
+    <link href="~/css/PaginaInicial.css" rel="stylesheet" type="text/css" />
 
-        .titulo {
-            margin-left: 40%;
-            margin-top: 10%;
-        }
-    </style>
 </head>
 <body>
-    <h2 class="titulo">Selecione o tipo de login</h2>
+    <div class="logo">
+        <img src="~/css/imgs/Logo.png" alt="Logo">
+
+    </div>
     <br />
     <br />
-    <a class="btn-link" asp-controller="Administrador" asp-action="LoginPage">Administrador</a>
     <br />
     <br />
     <br />
-    <a class="btn-link" asp-controller="Voluntario" asp-action="LoginPage">Voluntario</a>
+    <h1 class="titulo">Selecione o tipo de login</h1>
+
+    <div class="agrupamento">
+        <button class="item">
+            <img src="~/css/imgs/Vector2.png" alt="Eventos">
+            <a class="button-text" asp-controller="Administrador" asp-action="LoginPage">Administrador</a>
+        </button>
+        <br />
+        <button class="item">
+            <img src="~/css/imgs/PersonIcon.png" alt="Histórico">
+            <a class="button-text" asp-controller="Voluntario" asp-action="LoginPage">Voluntario</a>
+        </button>
+    </div>
 </body>
 </html>
+
+
