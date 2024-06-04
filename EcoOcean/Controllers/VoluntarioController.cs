@@ -51,6 +51,20 @@ namespace EcoOcean.Controllers
         }
 
 
+        public IActionResult ParticiparEvento(int VoluntarioId, int Eventoid)
+        {
+            Participacao participacao = new Participacao
+            {
+                VoluntarioId = VoluntarioId,
+                EventoId = Eventoid,
+                Pontuacao = 0
+            };
+
+            _dataContext.Add(participacao);
+            _dataContext.SaveChanges();
+            return RedirectToAction("HomeComEventos");
+        }
+
         public IActionResult LoginPage()
         {
             return View();
