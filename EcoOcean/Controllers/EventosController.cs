@@ -59,6 +59,7 @@ namespace EcoOcean.Controllers
             {
                 Area = area,
                 Evento = eventos.FirstOrDefault(e => e.AreaId == area.Id)
+                
             }).ToList();
 
             return View(listaCombinada);

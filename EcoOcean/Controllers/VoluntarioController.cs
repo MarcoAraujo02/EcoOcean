@@ -21,6 +21,7 @@ namespace EcoOcean.Controllers
             _logger = logger;
         }
 
+
         public IActionResult Index()
         {
             return View();
@@ -30,6 +31,7 @@ namespace EcoOcean.Controllers
         public async Task<IActionResult> HomeComEventos()
         {
 
+      
 
             var id = HttpContext.Session.GetInt32("_Id");
             var IdVoluntario = _dataContext.Voluntario.Find(id);
@@ -51,12 +53,26 @@ namespace EcoOcean.Controllers
         }
 
 
-        public IActionResult ParticiparEvento(int VoluntarioId, int Eventoid)
+        public IActionResult ParticiparEvento(int VoluntarioId, int EventoId)
         {
+            // Verifica se já existe uma participação para esse voluntário e evento
+            var participacaoExistente = _dataContext.Participacao
+                .FirstOrDefault(p => p.VoluntarioId == VoluntarioId && p.EventoId == EventoId);
+
+            // Se já existe uma participação, redirecione sem adicionar uma nova entrada
+            if (participacaoExistente != null)
+            {
+                // Você pode lidar com isso de várias maneiras, como exibir uma mensagem de erro
+                // ou redirecionar com uma mensagem informativa
+
+                return BadRequest("Opss voce ja esta participando a esse evento se atente a sua data de inicio para nao perder, ou espere o adm Inicir um novo :)");
+            }
+
+            // Se não existe uma participação, crie uma nova
             Participacao participacao = new Participacao
             {
                 VoluntarioId = VoluntarioId,
-                EventoId = Eventoid,
+                EventoId = EventoId,
                 Pontuacao = 0
             };
 
@@ -64,6 +80,7 @@ namespace EcoOcean.Controllers
             _dataContext.SaveChanges();
             return RedirectToAction("HomeComEventos");
         }
+
 
         public IActionResult LoginPage()
         {
@@ -75,6 +92,7 @@ namespace EcoOcean.Controllers
         {
             return View();
         }
+
 
         public IActionResult LogarVoluntario(LoginVoluntarioDTO request)
         {
@@ -96,6 +114,7 @@ namespace EcoOcean.Controllers
 
             return RedirectToAction("HomeComEventos");
         }
+
 
         public IActionResult CadastrarVoluntario()
         {

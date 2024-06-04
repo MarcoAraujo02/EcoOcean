@@ -64,7 +64,6 @@
 
 
     <table class="tabela" bgcolor="black" width="500">
-
         <tr bgcolor="grey" align="center">
             <th width="100">Cep</th>
             <th width="100">Estado</th>
@@ -73,39 +72,38 @@
             <th width="100">Complemento</th>
             <th width="100">Data de Inicio</th>
             <th width="100">Participar</th>
-
         </tr>
         <tbody>
             @foreach (var item in Model)
             {
+                // Verifique se o evento está associado a uma área
                 if (item.Evento != null && item.Evento.Status == "Andamento")
                 {
-                    <tr bgcolor="lightgrey" align="center">
-                        <td>@item.Area.Cep</td>
-                        <td>@item.Area.Estado</td>
-                        <td>@item.Area.Cidade</td>
-                        <td>@item.Area.Rua</td>
-                        <td>@item.Area.Descricao</td>
-                        <td>
-                            @if (item.Evento != null && item.Evento.DataInicio != null)
-                            {
-                                <text>@item.Evento.DataInicio</text>
-                            }
-                            else
-                            {
-                                <text>Sem evento associado a esse CEP, associe um</text>
-                            }
-                        </td>
-                        <td><a asp-controller="Voluntario" asp-action="ParticiparEvento" asp-route-VoluntarioId="@ViewBag.IdVoluntario" asp-route-eventoId="@item.Evento.Id">Participar</a></td>
-                    </tr>
+     
+                
+                    {
+                        <tr bgcolor="lightgrey" align="center">
+                            <td>@item.Area.Cep</td>
+                            <td>@item.Area.Estado</td>
+                            <td>@item.Area.Cidade</td>
+                            <td>@item.Area.Rua</td>
+                            <td>@item.Area.Descricao</td>
+                            <td>
+                                @if (item.Evento.DataInicio != null)
+                                {
+                                    <text>@item.Evento.DataInicio</text>
+                                }
+                                else
+                                {
+                                    <text>Sem evento associado a esse CEP, associe um</text>
+                                }
+                            </td>
+                            <td><a asp-controller="Voluntario" asp-action="ParticiparEvento" asp-route-VoluntarioId="@ViewBag.IdVoluntario" asp-route-eventoId="@item.Evento.Id">Participar</a></td>
+                        </tr>
+                    }
                 }
             }
-
-
-
         </tbody>
-
     </table>
-
 </body>
 </html>

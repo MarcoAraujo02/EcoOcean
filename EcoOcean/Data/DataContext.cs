@@ -20,6 +20,8 @@ namespace EcoOcean.Data
 
         public DbSet<Administrador> Administrador { get; set; }
 
+        public DbSet<Participacao> Participacao { get; set;}
+
 
     }
 }

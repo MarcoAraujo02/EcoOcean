@@ -18,8 +18,14 @@
     <h1 class="titulo">Coleta</h1>
     <div class="agrupamento-input">
 
-        <input class="inputs" type="text" id="volunteerId" name="volunteerId" placeholder="ID do Voluntário">
-        <input class="inputs" type="text" id="weight" name="weight" placeholder="ID Evento">
+            <select name="ParticipacaoId">
+                <option value="">Selecione um Id de participacao para fazer uma coleta</option>
+                @foreach (var part in ViewBag.Participacoes)
+                {
+                    <option value="@part.Id">@part.Id</option>
+                }
+            </select>
+            <br />
 
         <p class="subtitulo">Informe a pesagem da coleta em kg:</p>
 
@@ -38,7 +44,7 @@
     <br /><br />
 
     <div class="agrupamento-links">
-        <button href="#" class="link-login">Registrar</button>
+        <button href="#" class="link-login">Adicionar</button>
             
     </div>
     <br />
