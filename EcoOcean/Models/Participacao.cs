@@ -27,7 +27,7 @@ namespace EcoOcean.Models
 
 
         [Required]
-        public float pontuacao {  get; set; }
+        public int Pontuacao {  get; set; }
 
 
         public ICollection<Coleta> Coleta { get; set; }

@@ -70,13 +70,13 @@
             <th width="100">Rua</th>
             <th width="100">Complemento</th>
             <th width="100">Data de Inicio</th>
-            <th width="100">Finalizar</th>
+            <th width="100">Participar</th>
 
         </tr>
         <tbody>
             @foreach (var item in Model)
             {
-                if (item.Evento.Status == "Andamento")
+                if (item.Evento != null && item.Evento.Status == "Andamento")
                 {
                     <tr bgcolor="lightgrey" align="center">
                         <td>@item.Area.Cep</td>

@@ -75,7 +75,7 @@
         <tbody>
             @foreach (var item in Model)
             {
-                if (item.Evento.Status == "Encerrado")
+                if (item.Evento != null && item.Evento.Status == "Encerrado")
                 {
                     <tr bgcolor="lightgrey" align="center">
                         <td>@item.Area.Cep</td>

@@ -36,6 +36,6 @@ namespace EcoOcean.Models
         [Column("Sexo")]
         public string Sexo { get; set;}
 
-        public ICollection<Evento> Eventos { get; set; }
+        public ICollection<Participacao> Participao { get; set; }
     }
 }
