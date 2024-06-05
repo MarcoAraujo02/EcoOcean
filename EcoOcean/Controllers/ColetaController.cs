@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using EcoOcean.Models;
 using EcoOcean.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcoOcean.Controllers
 {
@@ -27,9 +28,13 @@ namespace EcoOcean.Controllers
 
         public IActionResult Coleta()
         {
-            var participacoes =  _dataContext.Participacao.ToList();
+            var participacoes = _dataContext.Participacao
+                                             .Include(p => p.Voluntario)
+                                             .Include(p => p.Evento) // Inclua os eventos aqui
+                                             .ToList();
+
             ViewBag.participacoes = participacoes;
-            
+
             return View();
         }
 

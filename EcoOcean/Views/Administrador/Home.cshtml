@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
      <link href="~/css/PaginaInicial.css" rel="stylesheet" type="text/css" />
+     <style>
+        .btnn {
+            background-color: #030925;
+            padding: 10px 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px dashed #02ac92;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            transition: .4s;
+            text-decoration: none;
+        }
+
+     </style>
 </head>
 <body>
     <div class="logo">
@@ -36,7 +52,7 @@
             <img src="~/css/imgs/Recycle.png" alt="Coleta">
             <a class="button-text" asp-area="" asp-controller="Coleta" asp-action="Coleta">Coleta</a>
         </button>
-            <a class="btn" asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+            <a class="btnn" asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
     </div>
 </body>
 </html>

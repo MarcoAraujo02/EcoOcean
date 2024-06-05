@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
+    <link href="~/css/Cadastro.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* Estilos existentes */
+        /* ... */
+
+   
+
+        .ranking-item {
+            /* Estilos existentes */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .info {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        .btnn {
+            background-color: #030925;
+            padding: 10px 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px dashed #02ac92;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            transition: .4s;
+            text-decoration: none;
+        }
+
+        .agrupamento2 {
+            display: flex;
+            justify-content: center;
+
+        }
+        /* ... Estilos adicionais ... */
+    </style>
+</head>
+
+<body>
+ 
+    <div class="logo">
+        <img src="~/css/imgs/Logo.png" alt="Logo">____
+        <a class="btnn" asp-area="" asp-controller="Voluntario" asp-action="HomeComEventos">Voltar</a>
+    </div>
+
+
+    <div class="container">
+        <div class="agrupamento2">
+            <h1 class="titulo">Ranking</h1>
+        </div>
+
+        <br>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="ranking-item">
+                <h3>Posição @(i + 1)</h3>
+                <p class="info"><strong>Voluntário:</strong> @Model[i].Voluntario.Nome</p>
+                <p class="info"><strong>Pontuação:</strong> @Model[i].Pontuacao</p>
+                <img src="~/css/imgs/Star.png" alt="Logo">
+            </div>
+            <br>
+        }
+    </div>
+</body>
+</html>
+

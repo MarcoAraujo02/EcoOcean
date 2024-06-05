@@ -9,21 +9,41 @@
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
     <link href="~/css/Coleta.css" rel="stylesheet" type="text/css" />
 </head>
-
+    <style>
+    .btnn {
+        background-color: #030925;
+        padding: 10px 20px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px dashed #02ac92;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transition: .4s;
+        text-decoration: none;
+    }
+    </style>
 <body>
     <form asp-controller="Coleta" asp-action="EfetuarColeta" method="post">
         <div class="logo">
-            <img src="~/css/imgs/Logo.png" alt="Logo">
+            <img src="~/css/imgs/Logo.png" alt="Logo">____
+            <a class="btnn" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
         </div>
+        <br /><br /><br /><br /><br />
         <h1 class="titulo">Coleta</h1>
         <div class="agrupamento-input">
+
             <select name="ParticipacaoId">
-                <option value="">Selecione um Id de participacao para fazer uma coleta</option>
-                @foreach (var part in ViewBag.Participacoes)
+                <option value="">Selecione um ID de participação para fazer uma coleta</option>
+                @foreach (var participacao in ViewBag.participacoes)
                 {
-                    <option value="@part.Id">@part.Id</option>
+                    <option value="@participacao.Id">ID: @participacao.Id - Voluntário: @participacao.Voluntario.UserName - Evento: @participacao.Evento.NomeEvento</option>
                 }
             </select>
+
+            </select>
+
             <br />
             <p class="subtitulo">Informe a pesagem da coleta em kg:</p>
             <select name="TipoDoLixo">
@@ -42,7 +62,7 @@
             <button type="submit" class="link-login">Adicionar</button>
         </div>
         <br />
-        <a class="link-login-2" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
+     
     </form>
 </body>
 </html>

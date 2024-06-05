@@ -8,7 +8,25 @@
     <link href="~/css/Tabela.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/listacl.css" rel="stylesheet">
     <link href="/static/css/botao.css" rel="stylesheet">
+    <style>
 
+
+        .btnn {
+            background-color: #030925;
+            padding: 10px 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px dashed #02ac92;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            transition: .4s;
+            text-decoration:none;
+            margin-left:60%;
+        }
+
+    </style>
 </head>
 
 
@@ -19,6 +37,7 @@
     <div class="logo">
         <img src="~/css/imgs/Logo.png" alt="Logo">____
         <a class="btn" asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
+        <a class="btnn" asp-area="" asp-controller="Voluntario" asp-action="RankingDePontos">Ranking de pontos</a>
     </div>
     <div class="btn-link-flash" role="alert" align="center">
     </div>

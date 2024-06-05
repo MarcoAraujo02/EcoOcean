@@ -150,7 +150,17 @@ namespace EcoOcean.Controllers
 
 
 
+        public IActionResult RankingDePontos()
+        {
+     
+            var maioresPontuacoes = _dataContext.Participacao
+                                                  .Include(p => p.Voluntario)
+                                                  .OrderByDescending(p => p.Pontuacao)
+                                                  .Take(5) 
+                                                  .ToList();
 
+            return View(maioresPontuacoes);
+        }
 
     }
 }
