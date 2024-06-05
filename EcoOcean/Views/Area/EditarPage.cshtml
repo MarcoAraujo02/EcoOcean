@@ -7,35 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inscreening.styles.css" asp-append-version="true" />
-    <style>
-        .formulario {
-            margin-top: 10%;
-            margin-left: 25%;
-            width: 50%
-        }
+    <link href="~/css/Cadastro.css" rel="stylesheet" type="text/css" />
 
-        .titulo {
-            margin-left: 48%
-        }
-
-        .titulo2 {
-            margin-left: 33%
-        }
-
-        .btn {
-            margin-left: 48%
-        }
-
-        .criar {
-            margin-left: 45%
-        }
-
-        .aa {
-            margin-left: 5%;
-            font-size: 50px;
-            margin-top: 155%
-        }
-    </style>
 </head>
 <body>
 
@@ -43,44 +16,37 @@
 
     <form asp-controller="Area" asp-action="EditarArea" method="post">
 
-        <h1 class="titulo2">Casdastro de Area</h1>
 
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Cep</label>
-            <input name="Cep" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Cep" asp-for="Cep">
-
+        <div class="agrupamento">
+            <h1 class="titulo">Editar Area</h1>
         </div>
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Estado</label>
-            <input name="Estado" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Estado" asp-for="Estado">
 
-        </div>
+        <div class="agrupamento-input">
+            <input class="inputs" name="Cep" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Cep" asp-for="Cep">
+            <br />
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Cidade</label>
-            <input name="Cidade" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Cidade" asp-for="Cidade">
+            <input class="inputs" name="Estado" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Estado" asp-for="Estado">
+            <br>
 
-        </div>
+            <input class="inputs" name="Cidade" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Cidade" asp-for="Cidade">
+            <br />
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Rua</label>
-            <input name="Rua" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Rua" asp-for="Rua">
+            <input class="inputs" name="Rua" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Rua" asp-for="Rua">
+            <br />
 
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="titulo">Descricao</label>
-            <input name="Descricao" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Descricao" asp-for="Descricao">
-
-        </div>
+            <input class="inputs" name="Descricao" type="text" class="form-control" id="exampleInputPassword1" required placeholder="Descricao" asp-for="Descricao">
+            <br />
+ 
    
-        <input  type="hidden" name="Id" value="@Model.Id">
+            <input  type="hidden" name="Id" value="@Model.Id">
+        </div>
 
-
-        <button type="submit" class="btn btn-primary">Editar</button>
-        <br />
-        <br />
+        <div class="agrupamento-links">
+            <button type="submit" class="btn btn-primary">Editar</button>
+            <br />
+            <br />
+        </div>
 
     </form>
 </body>
