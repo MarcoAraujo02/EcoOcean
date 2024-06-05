@@ -12,12 +12,11 @@
 
 <body>
     <form asp-controller="Coleta" asp-action="EfetuarColeta" method="post">
-    <div class="logo">
-        <img src="~/css/imgs/Logo.png" alt="Logo">
-    </div>
-    <h1 class="titulo">Coleta</h1>
-    <div class="agrupamento-input">
-
+        <div class="logo">
+            <img src="~/css/imgs/Logo.png" alt="Logo">
+        </div>
+        <h1 class="titulo">Coleta</h1>
+        <div class="agrupamento-input">
             <select name="ParticipacaoId">
                 <option value="">Selecione um Id de participacao para fazer uma coleta</option>
                 @foreach (var part in ViewBag.Participacoes)
@@ -26,33 +25,24 @@
                 }
             </select>
             <br />
-
-        <p class="subtitulo">Informe a pesagem da coleta em kg:</p>
-
-        <select >
+            <p class="subtitulo">Informe a pesagem da coleta em kg:</p>
+            <select name="TipoDoLixo">
                 <option value="">Selecione o tipo do material</option>
-                <option>Papel</option>
-                <option>Metal</option>
-                <option>Celular</option>
-                <option>Areeia</option>
-           
-        </select>
+                <option value="Papel">Papel</option>
+                <option value="Metal">Metal</option>
+                <option value="Plástico">Plástico</option>
+                <option value="Vidro">Vidro</option>
+                <option value="Organico">Orgânico</option>
+            </select>
+            <br />
+            <input class="inputs" type="text" id="Quantidade" name="Quantidade" placeholder="Selecione em KG a quantidade">
+        </div>
+        <br /><br />
+        <div class="agrupamento-links">
+            <button type="submit" class="link-login">Adicionar</button>
+        </div>
         <br />
-         <input class="inputs" type="text" id="weight" name="weight" placeholder="Selecione em KG a quantidade">
-    </div>
-
-    <br /><br />
-
-    <div class="agrupamento-links">
-        <button href="#" class="link-login">Adicionar</button>
-            
-    </div>
-    <br />
         <a class="link-login-2" asp-area="" asp-controller="Administrador" asp-action="Home">Voltar</a>
     </form>
 </body>
-
 </html>
-
-
-

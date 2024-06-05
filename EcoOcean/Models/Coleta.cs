@@ -11,7 +11,7 @@ namespace EcoOcean.Models
 
 
         [Required]
-        public int PartipiacaoId { get; set; }
+        public int ParticipacaoId { get; set; }
 
 
         [ForeignKey("ParticipacaoId")]

@@ -4,16 +4,15 @@ namespace EcoOcean.DTOs
 {
     public class CadastroColetaDTO
     {
+            [Required]
+            public int ParticipacaoId { get; set; }
 
+            [Required]
+            public string TipoDoLixo { get; set; }
 
-        [Required]
-
-        public string TipoDoLixo { get; set; }
-
-
-        [Required]
-
-        public float  Quantidade { get; set; }
+            [Required]
+            public int Quantidade { get; set; }
+        
 
 
     }

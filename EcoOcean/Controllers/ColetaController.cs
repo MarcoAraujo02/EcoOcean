@@ -33,9 +33,71 @@ namespace EcoOcean.Controllers
             return View();
         }
 
-        public IActionResult EfetuarColeta()
+        [HttpPost]
+        public IActionResult EfetuarColeta(CadastroColetaDTO request)
         {
-            return View();
+            
+            var participacao = _dataContext.Participacao.FirstOrDefault(p => p.Id == request.ParticipacaoId);
+
+            if (participacao == null)
+            {
+                
+                return NotFound();
+            }
+
+            int pontuacao = CalcularPontuacao(request.TipoDoLixo, request.Quantidade);
+
+            
+            var novaColeta = new Coleta
+            {
+                ParticipacaoId = request.ParticipacaoId,
+                TipoDoLixo = request.TipoDoLixo,
+                Quantidade = request.Quantidade
+            };
+
+            
+            _dataContext.Coleta.Add(novaColeta);
+
+            
+            participacao.Pontuacao += pontuacao;
+
+            
+            _dataContext.SaveChanges();
+
+            
+            return RedirectToAction("Home", "Administrador");
+        }
+
+        
+        private int CalcularPontuacao(string tipoDoLixo, int quantidade)
+        {
+            int pontuacao = 0;
+
+            
+            switch (tipoDoLixo.ToLower())
+            {
+                case "vidro":
+                    pontuacao = quantidade * 5;
+                    break;
+                case "papel":
+                    pontuacao = quantidade * 1;
+                    break;
+                case "plástico":
+                    pontuacao = quantidade * 2;
+                    break;
+                case "metal":
+                    pontuacao = quantidade * 3;
+                    break;
+                case "organico":
+                    pontuacao = quantidade * 4;
+                    break;
+                default:
+                    pontuacao = quantidade * 1; 
+                    break;
+            }
+
+            return pontuacao;
         }
     }
-}
+ }
+
