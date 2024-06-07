@@ -1,5 +1,14 @@
+<h1>Ideia do Projeto</h1>
 
-Segue ADMS cadastrados para fazer o login:
+O jogo se inicia em uma tela com 2 opções, uma de Administrador e a outra de Voluntario. Ao efetuarmos o login com o Administrador (Adm são Cadastrados manualmente no banco de dados)
+vamos para a home do mesmo na qual ele pode fazer Novos eventos relacionando com as areas existentes que temos, finalizar o eventos que estão em andamento e fazer uma coleta, nessa
+coleta o Adm informa o Id do voluntario e o Id do Evento que esta ocorrendo, verificamos se o Id do voluntario esta presente nesse evento escolhemos o material que foi pego e
+colocamos o peso em KG na quantidade de lixo para assim somarmos os pontos do Voluntario.<br> Ja na parte de Voluntario apos Efetuarmos o Login o mesmo é direcionado para uma tela na qual 
+mostra todos os eventos que estão em andamento. O voluntario escolhe qual evento ele vai participar e vinculamos o Id do Voluntario no evento escolhido, e caso o voluntario queira ver
+fizemos um Ranking dos usuarios com maiores pontuações.
+
+
+<h1>Segue ADMS cadastrados para fazer o login:</h1>
 
 ADM 1-
 <br>
@@ -22,7 +31,7 @@ Email - Leonardo
 Senha - 123
 <br>
 
-<br> Imagem Modelo Entidade Relacionamento como foi pedido-
+<br> <h1>Imagem Modelo Entidade Relacionamento como foi pedido-</h1>
 
 Logical:
 <br><br>
